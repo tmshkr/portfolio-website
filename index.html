@@ -10,15 +10,31 @@
   </head>
   <body>
     <main>
-      <section id="hello">
-        <aside></aside>
+      <section>
+        <aside responsive-background-image>
+          <img
+            sizes="800w, 1800w"
+            srcset="
+              images/resized/clouds-800w.jpg   800w,
+              images/resized/clouds-1800w.jpg 1800w
+            "
+          />
+        </aside>
         <article>
           <h1>Hello, I'm Tim</h1>
           <p>I'm studying Full Stack Web Development at Lambda School</p>
         </article>
       </section>
       <section>
-        <aside></aside>
+        <aside responsive-background-image>
+          <img
+            sizes="800w, 1800w"
+            srcset="
+              images/resized/code-800w.jpg   800w,
+              images/resized/code-1800w.jpg 1800w
+            "
+          />
+        </aside>
         <article>
           <h2>Skills</h2>
           <ul>
@@ -50,7 +66,15 @@
         </article>
       </section>
       <section>
-        <aside></aside>
+        <aside responsive-background-image>
+          <img
+            sizes="800w, 1800w"
+            srcset="
+              images/resized/water-800w.jpg   800w,
+              images/resized/water-1800w.jpg 1800w
+            "
+          />
+        </aside>
         <article>
           <h2>Projects</h2>
         </article>
@@ -62,6 +86,35 @@
       </section>
     </main>
     <script>
+      class ResponsiveBackgroundImage {
+        constructor(element) {
+          this.element = element;
+          this.img = element.querySelector("img");
+          this.src = "";
+
+          this.img.addEventListener("load", () => {
+            this.update();
+          });
+
+          if (this.img.complete) {
+            this.update();
+          }
+        }
+
+        update() {
+          let src =
+            typeof this.img.currentSrc !== "undefined"
+              ? this.img.currentSrc
+              : this.img.src;
+          if (this.src !== src) {
+            this.src = src;
+            this.element.style.backgroundImage = 'url("' + this.src + '")';
+          }
+        }
+      }
+      document.querySelectorAll("[responsive-background-image]").forEach(el => {
+        new ResponsiveBackgroundImage(el);
+      });
       document.querySelectorAll("section").forEach((el, i, arr) => {
         if (i < arr.length - 1) {
           el.onclick = function() {
