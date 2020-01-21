@@ -3,7 +3,8 @@
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: sans-serif;
   padding: 0 1rem;
   text-align: center;
@@ -23,7 +24,7 @@ section {
   display: grid;
   grid-template-rows: 1fr 2fr;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   &:first-child {
     text-align: center;
   }
