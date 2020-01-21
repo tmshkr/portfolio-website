@@ -7,16 +7,58 @@ img {
 }
 
 section {
+  cursor: pointer;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
   width: 100vw;
   min-height: 100vh;
-  aside {
-    max-width: 100vw;
+  &:nth-child(1) {
+    text-align: center;
+    aside {
+      background-image: url("../images/resized/clouds_1200x800.jpg");
+      background-position: center bottom;
+    }
   }
+  &:nth-child(2) {
+    aside {
+      background-image: url("../images/resized/code_1200x1600.jpg");
+      background-position: center bottom;
+    }
+  }
+  &:nth-child(3) {
+    aside {
+      background-image: url("../images/resized/water_1200x797.jpg");
+      background-position: center bottom;
+    }
+  }
+  &:last-child {
+    cursor: initial;
+    text-align: center;
+  }
+
+  @media (min-width: 800px) {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    &:nth-child(1) {
+      article {
+        display: grid;
+        align-content: center;
+      }
+    }
+    &:nth-child(2) {
+      aside {
+        grid-area: 1 / 2 / 2 / 3;
+      }
+    }
+    &:last-child {
+      grid-template-columns: 1fr;
+    }
+  }
+
   article {
     padding: 1rem;
   }
-}
-
-section#hello {
-  text-align: center;
+  aside {
+    background-size: cover;
+  }
 }

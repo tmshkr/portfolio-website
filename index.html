@@ -11,14 +11,14 @@
   <body>
     <main>
       <section id="hello">
-        <aside><img src="images/resized/clouds_1200x800.jpg" alt="" /></aside>
+        <aside></aside>
         <article>
           <h1>Hello, I'm Tim</h1>
           <p>I'm studying Full Stack Web Development at Lambda School</p>
         </article>
       </section>
       <section>
-        <aside><img src="images/resized/code_1200x1600.jpg" alt="" /></aside>
+        <aside></aside>
         <article>
           <h2>Skills</h2>
           <ul>
@@ -50,7 +50,7 @@
         </article>
       </section>
       <section>
-        <aside><img src="images/resized/water_1200x797.jpg" alt="" /></aside>
+        <aside></aside>
         <article>
           <h2>Projects</h2>
         </article>
@@ -60,16 +60,15 @@
           <h2>Contact</h2>
         </article>
       </section>
-      <script>
-        document.querySelectorAll("section").forEach((el, i, arr) => {
-          if (i < arr.length - 1) {
-            el.style.cursor = "pointer";
-            el.onclick = function() {
-              arr[i + 1].scrollIntoView({ behavior: "smooth" });
-            };
-          }
-        });
-      </script>
     </main>
+    <script>
+      document.querySelectorAll("section").forEach((el, i, arr) => {
+        if (i < arr.length - 1) {
+          el.onclick = function() {
+            arr[i + 1].scrollIntoView({ behavior: "smooth" });
+          };
+        }
+      });
+    </script>
   </body>
 </html>
