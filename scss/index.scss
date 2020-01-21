@@ -6,6 +6,17 @@ img {
   max-width: 100vw;
 }
 
+section {
+  width: 100vw;
+  min-height: 100vh;
+  aside {
+    max-width: 100vw;
+  }
+  article {
+    padding: 1rem;
+  }
+}
+
 section#hello {
   text-align: center;
 }
