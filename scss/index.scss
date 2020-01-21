@@ -1,5 +1,10 @@
 * {
-  outline: 1px solid cyan;
+  //   outline: 1px solid cyan;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 h1,
@@ -11,6 +16,8 @@ h3 {
 
 p {
   font-family: "Merriweather", serif;
+  padding: 0 1rem;
+  line-height: 1.5;
 }
 
 [responsive-background-image] img {
@@ -38,8 +45,7 @@ section {
   min-height: 100vh;
   text-align: center;
   &:last-child {
-    cursor: initial;
-    text-align: center;
+    display: block;
   }
 
   @media (min-width: 800px) {
@@ -99,6 +105,9 @@ ul.gallery {
     img {
       max-width: 100%;
       height: auto;
+    }
+    p {
+      padding: 0;
     }
     svg {
       margin: auto;
